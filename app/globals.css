@@ -2,4 +2,50 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Heebo', sans-serif;
+}
+/* Define @font-face for Heebo */
+@font-face {
+  font-family: 'Heebo';
+  src: url('/fonts/Heebo-VariableFont_wght.ttf') format('truetype'), /* Update path */
+       url('/fonts/heebo-regular.woff2') format('woff2'),   /* Update path */
+       url('/fonts/heebo-regular.woff') format('woff');     /* Update path */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('/fonts/heebo-bold.ttf') format('truetype'), /* Update path */
+       url('/fonts/heebo-bold.woff2') format('woff2'),   /* Update path */
+       url('/fonts/heebo-bold.woff') format('woff');     /* Update path */
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Define @font-face for Nunito */
+/* url('fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype'),  */
+@font-face {
+  font-family: 'Nunito';
+  src:
+       url('/fonts/nunito-regular.woff2') format('woff2'),   /* Update path */
+       url('/fonts/nunito-regular.woff') format('woff');     /* Update path */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/nunito-bold.ttf') format('truetype'), /* Update path */
+       url('/fonts/nunito-bold.woff2') format('woff2'),   /* Update path */
+       url('/fonts/nunito-bold.woff') format('woff');     /* Update path */
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+/* Use Nunito font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nuninto', sans-serif;
 }
