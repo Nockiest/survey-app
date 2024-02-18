@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import * as stylex from "@stylexjs/stylex";
 import { BUTTON_SHAPES, BUTTON_SIZES, BUTTON_STYLES } from '@/styles/button';
 import { BorderRadius, BorderStyles, Colors, Sizes, TextColors } from 'types/stylingTypes';
@@ -45,6 +45,7 @@ interface ButtonProps extends React.HtmlHTMLAttributes<HTMLButtonElement> {
           transform?: string; // Type of transform
       };
   }>,
+  children?: ReactNode
   //'primary' | 'secondary';
   size?: stylex.StyleXStylesWithout<{
     // backgroundColor?: any|Colors| undefined,
@@ -85,13 +86,13 @@ interface ButtonProps extends React.HtmlHTMLAttributes<HTMLButtonElement> {
   }>
 }
 
-const Button: React.FC<ButtonProps> = ({ type, size , rounding , disabled=false,  ...props }) => {
+const Button: React.FC<ButtonProps> = ({ type, size , rounding , disabled=false,children,  ...props }) => {
   // Add logic to choose between main, secondary, etc.
   // const buttonType = type ? (type === 'primary' ? BUTTON_STYLES.primary : BUTTON_STYLES.secondary) : {};
   // buttonType, BUTTON_SIZES[size], BUTTON_SHAPES[rounding] size='md', rounding='none', disabled=false,
   return (
       <button {...props} disabled={disabled}  {...stylex.props(BUTTON_STYLES.base,type, size , rounding )}>
-          Button
+           {children}
       </button>
   );
 };

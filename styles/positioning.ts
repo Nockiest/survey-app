@@ -5,8 +5,14 @@ const DARK = "@media (prefers-color-scheme: dark)";
 export const POSITIONING_STYLES = stylex.create({
     row: {
       display: "flex",
+      flexFlow: "row",
+      justifyContent: "space-around",
+    },
+    rowResponsive:{
+      display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
+      flexFlow:'row wrap'
     },
     column: {
       display: "flex",
