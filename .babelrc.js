@@ -4,15 +4,20 @@ module.exports = {
       [
         '@stylexjs/babel-plugin',
         {
-          dev: false,
+          dev: true,
           stylexSheetName: '<>',
-          genConditionalClasses: true,
-          unstable_moduleResolution: {
+          runtimeInjection: true,
+          useRemForFontSize: true,
+          genConditionalClasses: false,
+          unstable_moduleResolution:{
+            // The module system to be used.
+            // Use this value when using `ESModules`.
             type: 'commonJS',
-            rootDir: __dirname,
+            // The absolute path to the root directory of your project.
+            rootDir: string,
+            // Override `.stylex.js` with your own extension.
           },
-        },
+         }
       ],
     ],
   };
-  

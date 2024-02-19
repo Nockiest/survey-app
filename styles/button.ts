@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex";
-import { colors } from "./Variables";
+
 // import { accent, background, colors, primaryText } from './Variables';
 export const DARK = "@media (prefers-color-scheme: dark)";
 // const {primaryText, secondaryText,accent, background, lineColor} = colors
@@ -18,23 +18,41 @@ export const BUTTON_STYLES = stylex.create({
   base: {
     borderRadius: '4px',
     cursor: "pointer",
-    transition: "background-color 0.3s, transform 0.3s",
     userSelect: 'none',
     ":hover": {
       transform: "scale(1.1)",
     },
+    textDecoration: 'none',
+    touchAction: 'manipulation',
+    WebkitUserSelect: 'none',
+    justifyContent: 'center',
+    lineHeight: '1.25',
+    fontWeight: '600',
+    margin: '0',
+    transition: 'all 250ms',
+    verticalAlign: 'baseline',
   },
-  test:{
-    backgroundColor: 'black'
-  },
-  // primary: {
-  //   backgroundColor: primary,
-  //   color: text,
-  //   borderRadius: '4px',
-  //   border: "none",
-  //   transition: "background-color 0.3s, transform 0.3s",
 
-  // },
+  btnNav: {
+    color: primary,
+    paddingLeft: "2em",
+    paddingRight: "2em",
+    transform: 'skew(-20deg)',
+    backgroundColor: `linear-gradient(#e66465, #9198e5)`,
+    padding: '0 1em',
+    position: 'relative',
+    right: '1em',
+    height: '100%',
+    ':active': {
+              background: '#f857a8',
+
+              color: '#fff',
+            },
+
+    ":hover": {
+      transform: "scale(1.1) skew(-20deg)',",
+    },
+  },
   primary: {
     alignItems: 'center',
     backgroundClip: 'padding-box',
@@ -43,25 +61,16 @@ export const BUTTON_STYLES = stylex.create({
     borderRadius: '.25rem',
     boxShadow: 'rgba(0, 0, 0, 0.02) 0 1px 3px 0',
     boxSizing: 'border-box',
-    color: '#fff',
-
+    color: background,
     display: 'inline-flex',
     fontFamily: 'system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif',
     fontSize: '16px',
-    fontWeight: '600',
-    justifyContent: 'center',
-    lineHeight: '1.25',
-    margin: '0',
     minHeight: '3rem',
     padding: 'calc(.875rem - 1px) calc(1.5rem - 1px)',
-    position: 'relative',
-    textDecoration: 'none',
-    transition: 'all 250ms',
 
-    WebkitUserSelect: 'none',
-    touchAction: 'manipulation',
-    verticalAlign: 'baseline',
-    // width: 'auto',
+
+
+
     ':hover': {
       backgroundColor: primary,
       boxShadow: 'rgba(0, 0, 0, 0.1) 0 4px 12px',
@@ -84,23 +93,11 @@ export const BUTTON_STYLES = stylex.create({
       boxShadow: 'rgba(0, 0, 0, 0.02) 0 1px 3px 0',
       boxSizing: 'border-box',
       color: 'rgba(0, 0, 0, 0.85)',
-
       display: 'inline-flex',
       fontFamily: 'system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif',
       fontSize: '16px',
-      fontWeight: '600',
-      justifyContent: 'center',
-      lineHeight: '1.25',
-      margin: '0',
       minHeight: '3rem',
       padding: 'calc(.875rem - 1px) calc(1.5rem - 1px)',
-      position: 'relative',
-      textDecoration: 'none',
-      transition: 'all 250ms',
-
-      WebkitUserSelect: 'none',
-      touchAction: 'manipulation',
-      verticalAlign: 'baseline',
       width: 'auto',
       ':hover': {
         borderColor: 'rgba(0, 0, 0, 0.15)',
@@ -124,6 +121,9 @@ export const BUTTON_STYLES = stylex.create({
   disabled: {
     opacity: 0.5,
     cursor: "not-allowed",
+    border: '1px solid #999999',
+    backgroundColor: '#cccccc',
+    color: '#666666',
   },
 
 });

@@ -7,12 +7,14 @@ export const POSITIONING_STYLES = stylex.create({
       display: "flex",
       flexFlow: "row",
       justifyContent: "space-around",
+      alignItems: 'center'
     },
     rowResponsive:{
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-around",
-      flexFlow:'row wrap'
+      flexFlow:'row wrap',
+      alignItems: 'center'
     },
     column: {
       display: "flex",
