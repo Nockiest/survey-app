@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import * as stylex from "@stylexjs/stylex";
-import { BUTTON_SHAPES, BUTTON_SIZES, BUTTON_STYLES } from '@/styles/button';
+import { ROUNDING, BUTTON_SIZES, BUTTON_STYLES } from '@/styles/button';
 import { BorderRadius, BorderStyles, Colors, Sizes, TextColors } from 'types/stylingTypes';
   // size?: StyleXStyles;
 interface ButtonProps extends React.HtmlHTMLAttributes<HTMLButtonElement> {

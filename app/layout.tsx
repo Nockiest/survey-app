@@ -16,7 +16,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body style={{margin:0, padding:0, height:'100vh'}}>{children}</body>
+      <body style={{margin:0, padding:0,  textDecoration:'none'}}>{children}</body>
     </html>
   );
 }

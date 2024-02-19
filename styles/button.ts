@@ -150,28 +150,4 @@ export const BUTTON_SIZES = stylex.create({
   xs: {},
 });
 
-export const BUTTON_SHAPES = stylex.create({
-  none: {
-    borderRadius: "0",
-  },
-  xs: {
-    borderRadius: "2px",
-  },
-  sm: {
-    borderRadius: "4px",
-  },
-  md: {
-    borderRadius: "6px",
-  },
-  lg: {
-    borderRadius: "8px",
-  },
-  xl: {
-    borderRadius: "12px",
-  },
-  xxl:{ borderRadius: "16px" },
-  xxxl:{ borderRadius: "20px"},
-  full: {
-    borderRadius: "9999px", // Use a large value to make it fully rounded
-  },
-});
+ 

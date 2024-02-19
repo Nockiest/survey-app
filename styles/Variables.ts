@@ -62,3 +62,79 @@ export const SHADOWS = stylex.create({
 //   fontFamily: "system-ui, sans-serif",
 //   fontSize: "16px",
 // });
+export const ROUNDING = stylex.create({
+  none: {
+    borderRadius: "0",
+  },
+  xs: {
+    borderRadius: "2px",
+  },
+  sm: {
+    borderRadius: "4px",
+  },
+  md: {
+    borderRadius: "6px",
+  },
+  lg: {
+    borderRadius: "8px",
+  },
+  xl: {
+    borderRadius: "12px",
+  },
+  xxl:{ borderRadius: "16px" },
+  xxxl:{ borderRadius: "20px"},
+  full: {
+    borderRadius: "9999px", // Use a large value to make it fully rounded
+  },
+});
+
+export const MARGIN = stylex.create({
+  none: {
+    margin: "0",
+  },
+  xs: {
+    margin: "2px",
+  },
+  sm: {
+    margin: "4px",
+  },
+  md: {
+    margin: "6px",
+  },
+  lg: {
+    margin: "8px",
+  },
+  xl: {
+    margin: "12px",
+  },
+  xxl:{ margin: "16px" },
+  xxxl:{ margin: "20px"},
+  full: {
+    margin: "auto", // Use a large value to make it fully rounded
+  },
+})
+export const PADDING = stylex.create({
+  none: {
+    padding: "0",
+  },
+  xs: {
+    padding: "2px",
+  },
+  sm: {
+    padding: "4px",
+  },
+  md: {
+    padding: "6px",
+  },
+  lg: {
+    padding: "8px",
+  },
+  xl: {
+    padding: "12px",
+  },
+  xxl:{ padding: "16px" },
+  xxxl:{ padding: "20px"},
+  full: {
+    padding: "auto", // Use a large value to make it fully rounded
+  },
+})
