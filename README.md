@@ -15,3 +15,6 @@ Instead of installing each sepparately, open a terminal in the directory with th
 and run `npm install`.
 
 Afterwards you can run the project by running `npm run dev`.
+
+
+in context i should readd the sruevy.id||uuidv4() when starting to use real surveys with ids in my values

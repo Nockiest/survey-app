@@ -4,7 +4,7 @@ import * as stylex from "@stylexjs/stylex";
 import { LAYOUT } from "@/styles/layout";
 import { SHADOWS, SPACING } from "@/styles/Variables";
 import { BUTTON_STYLES, DARK } from "@/styles/button";
-import { POSITIONING_STYLES } from "@/styles/positioning";
+import { POSITIONING } from "@/styles/positioning";
 import { LINK_STYLES } from "@/styles/link";
 import Button from "./Button";
 import { LIST } from "@/styles/list";
@@ -35,7 +35,7 @@ export default function Footer() {
       className="footer"
       {...stylex.props(
         FOOTER_STYLING.base,
-        POSITIONING_STYLES.rowResponsive,
+        POSITIONING.rowResponsive,
         SHADOWS.lg
       )}
     >
@@ -55,7 +55,7 @@ export default function Footer() {
 
       <ul
         className="footer__nav"
-        {...stylex.props(POSITIONING_STYLES.rowResponsive, SPACING.md)}
+        {...stylex.props(POSITIONING.rowResponsive, SPACING.md)}
       >
         <li className="nav__item" {...stylex.props(LIST.default)}>
           <h2 className="nav__title" {...stylex.props(FOOTER_STYLING.h2)}>
@@ -145,7 +145,7 @@ export default function Footer() {
 }
 {
   /* // <footer {...stylex.props( LAYOUT.threeColumn, FOOTER_STYLING.base)}  >
-      //   <nav {...stylex.props(POSITIONING_STYLES.column)}>
+      //   <nav {...stylex.props(POSITIONING.column)}>
       //     <Link {...stylex.props(LINK_STYLES.base)} style={{textDecoration:'none'}} href="/about">
       //        About
       //     </Link>

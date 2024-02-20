@@ -4,11 +4,12 @@ export type Answer = {
 
 export type Survey = {
     author: string
-    views: string
-    completions: string
+    views: number
+    completions: number
     answerStats: Answer[]
-    language?: string
-    tags?: string[]
+    language? : string
+    tags? : string
     description: string
     title: string
+    id: string
 }

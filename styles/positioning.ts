@@ -2,7 +2,7 @@ import * as stylex from "@stylexjs/stylex";
 // import { accent, background, colors, primaryText } from './Variables';
 const DARK = "@media (prefers-color-scheme: dark)";
 
-export const POSITIONING_STYLES = stylex.create({
+export const POSITIONING = stylex.create({
   row: {
     display: "flex",
     flexFlow: "row",
@@ -24,6 +24,9 @@ export const POSITIONING_STYLES = stylex.create({
     flexFlow: "row wrap",
     alignItems: "center",
   },
+  centeredSelf: {
+    margin: '0 auto'
+  },
   column: {
     display: "flex",
     flexDirection: "column",
@@ -31,6 +34,7 @@ export const POSITIONING_STYLES = stylex.create({
   },
   centered: {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
   },

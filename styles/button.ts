@@ -9,10 +9,7 @@ export const primary = { default: "#ff8b1f", [DARK]: "#ff8b1f" };
 export const secondary = { default: "#8be3c1", [DARK]: "#8be3c1" };
 export const  accent = { default: "#5cb5d8", [DARK]: "#5cb5d8" };
 
-/* CSS */
-
-
-
+const danger = '#FF4136';
 
 export const BUTTON_STYLES = stylex.create({
   base: {
@@ -85,6 +82,28 @@ export const BUTTON_STYLES = stylex.create({
       transform: 'translateY(0)',
     },
   },
+  danger:{
+    alignItems: 'center',
+    backgroundClip: 'padding-box',
+    backgroundColor: danger,
+    border: '1px solid transparent',
+    borderRadius: '.25rem',
+    boxShadow: 'rgba(0, 0, 0, 0.1) 0 4px 12px',
+    boxSizing: 'border-box',
+    color: background,
+    display: 'inline-flex',
+    fontFamily: 'system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif',
+    fontSize: '16px',
+    minHeight: '3rem',
+    padding: 'calc(.875rem - 1px) calc(1.5rem - 1px)',
+
+
+    ':hover:active': {
+      backgroundColor: '#AA4136',
+      boxShadow: `rgba(0, 0, 0, .06) 0 2px 4px`,
+      transform: 'translateY(0)',
+    },
+  } ,
     secondary: {
       alignItems: 'center',
       backgroundColor: '#FFFFFF',
@@ -149,5 +168,3 @@ export const BUTTON_SIZES = stylex.create({
   },
   xs: {},
 });
-
- 

@@ -1,6 +1,6 @@
 import { BUTTON_SIZES, BUTTON_STYLES } from "@/styles/button";
 import { LINK_STYLES } from "@/styles/link";
-import { POSITIONING_STYLES } from "@/styles/positioning";
+import { POSITIONING } from "@/styles/positioning";
 import * as stylex from "@stylexjs/stylex";
 import Link from "next/link";
 import Button from "./Button";
@@ -11,16 +11,16 @@ import { HEADER } from "@/styles/header";
 import { ROUNDING, MARGIN } from "../styles/Variables";
 
 export default function Header({
-  isAuthenticated,
+  isAuth ,
 }: {
-  isAuthenticated: boolean;
+  isAuth : boolean;
 }) {
   return (
     <div style={{ height: "100px" }}>
       <header id="nav-wrapper" {...stylex.props(HEADER.navWrapper, SHADOWS.sm)}>
         <nav
           id="nav"
-          {...stylex.props(HEADER.nav, POSITIONING_STYLES.rowResponsive)}
+          {...stylex.props(HEADER.nav, POSITIONING.rowResponsive)}
         >
           <h1
             className="logo un-skew"
@@ -38,12 +38,12 @@ export default function Header({
 
           <div
             className="nav right"
-            {...stylex.props(POSITIONING_STYLES.rowResponsive, MARGIN.xxl)}
+            {...stylex.props(POSITIONING.rowResponsive, MARGIN.xxl)}
           >
             {["home", "about", "work", "contact"].map((link, index) => (
               <Button
                 type={BUTTON_STYLES.primary}
-                styling={BUTTON_STYLES.btnNav}
+                styling={[BUTTON_STYLES.btnNav]}
                 key={index}
               >
                 <Mylink href={link === "home" ? "/" : `/${link}`}>
@@ -59,10 +59,10 @@ export default function Header({
 }
 
 {
-  /* <header {...stylex.props(POSITIONING_STYLES.row,  )} style={{backgroundColor:'orange', margin:0, padding:'0'}}>
+  /* <header {...stylex.props(POSITIONING.row,  )} style={{backgroundColor:'orange', margin:0, padding:'0'}}>
       <h1>Survey App</h1>
-      <nav {...stylex.props(POSITIONING_STYLES.row)}>
-        {isAuthenticated ? (
+      <nav {...stylex.props(POSITIONING.row)}>
+        {isAuth  ? (
           <>
             <button {...stylex.props(BUTTON_SIZES.md, BUTTON_STYLES.secondary)}  >
             <Link href="/surveys"  >
