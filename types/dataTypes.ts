@@ -7,8 +7,8 @@ export type Survey = {
     views: string
     completions: string
     answerStats: Answer[]
-    Language?: string
-    Tags?: string[]
-    Description: string
-    Title: string
+    language?: string
+    tags?: string[]
+    description: string
+    title: string
 }

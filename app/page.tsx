@@ -9,6 +9,7 @@ import Button from '@/components/Button';
 import { CARD} from '@/styles/card';
 import Dashboard from '@/components/Dashboard';
 import { mockSurveys } from './mockData/dashboardData';
+import Table from '@/components/Table';
 
 
 
@@ -24,6 +25,7 @@ const HomePage: NextPage = () => {
           <div   >
             {/* {{...stylex.props(CARD.default)}} */}
             <h2>My Surveys</h2>
+            {/* <Table /> */}
            <Dashboard surveys={mockSurveys} />
           </div>
         ) : (
