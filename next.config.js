@@ -11,4 +11,12 @@ module.exports = stylexPlugin({
   filename: 'stylex-bundle.css',
   rootDir: __dirname,
   useCSSLayers: true,
-})(nextConfig);
+})({
+  images: {
+    domains: ['developers.google.com'],
+  },
+});
+
+//images: {
+  //domains: ['developers.google.com'],
+  //},

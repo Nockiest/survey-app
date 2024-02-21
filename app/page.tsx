@@ -12,21 +12,22 @@ import { mockSurveys } from '../mockData/dashboardData';
 import Table from '@/components/Table';
 import {HEADER} from '@/styles/header'
 import {SHADOWS,ROUNDING} from '@/styles/Variables'
+import { useGlobal } from '../Context';
 
 
 const HomePage: NextPage = () => {
-  const isAuth = true; // Replace with your authentication logic
+  const isAuth = true // useGlobal(); // Replace with your authentication logic
 
   return (
     <>
 
-      <Header isAuth ={isAuth } />
+      <Header/>
       <main >
         {isAuth  ? (
           <div   >
 
             <h2>My Surveys</h2>
-            {/* <Table /> */}
+
            <Dashboard  />
           </div>
         ) : (
@@ -44,7 +45,7 @@ const HomePage: NextPage = () => {
       <button {...stylex.props(BUTTON_STYLES.base,BUTTON_SIZES.sm,BUTTON_STYLES.secondary)}>Big</button>
       <Button    type={BUTTON_STYLES.primary} size={BUTTON_SIZES.lg} />
       <Button    type={BUTTON_STYLES.secondary} size={BUTTON_SIZES.md} />
-{/* // type='secondary' size='lg' rounding='full' */}
+
       <h1>The quick brown fox jumps over the lazy dog.</h1>
 <h2>Jackdaws love my big sphinx of quartz.</h2>
 <h3>Mr. Jock, TV quiz PhD, bags few lynx.</h3>
@@ -52,7 +53,7 @@ const HomePage: NextPage = () => {
 <h5>Fix problem quickly with galvanized jets.</h5>
 <h6>Brawny gods just flocked up to quiz and vex him.</h6>
 <p>Brawny gods just flocked up to quiz and vex him.</p>
-      <Footer />
+
     </>
   );
 };

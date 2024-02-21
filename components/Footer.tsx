@@ -55,7 +55,7 @@ export default function Footer() {
 
       <ul
         className="footer__nav"
-        {...stylex.props(POSITIONING.rowResponsive, SPACING.md)}
+        {...stylex.props(POSITIONING.rowResponsive,POSITIONING.start, SPACING.md)}
       >
         <li className="nav__item" {...stylex.props(LIST.default)}>
           <h2 className="nav__title" {...stylex.props(FOOTER_STYLING.h2)}>

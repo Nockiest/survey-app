@@ -1,6 +1,8 @@
-import { GlobalContextProvider } from "./Context";
+import Header from "@/components/Header";
+import { GlobalContext, GlobalContextProvider, useGlobal } from "../Context";
 import "./globals.css";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+import Footer from "@/components/Footer";
 
 export const metadata: {
   title: string;
@@ -18,8 +20,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body style={{ margin: 0, padding: 0, textDecoration: "none" }}>
- 
-        <GlobalContextProvider>{children}</GlobalContextProvider>
+        <GlobalContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </GlobalContextProvider>
       </body>
     </html>
   );

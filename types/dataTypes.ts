@@ -8,7 +8,7 @@ export type Survey = {
     uploaded: boolean
     completions: number
     questions: any[],
-    answerStats: Answer[]
+    // answerStats: Answer[]
     language? : string
     tags? : string
     description: string

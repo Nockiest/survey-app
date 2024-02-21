@@ -32,6 +32,21 @@ export const POSITIONING = stylex.create({
     flexDirection: "column",
     justifyContent: "space-around",
   },
+  start: {
+    alignItems:'start',
+  },
+  end: {
+    alignItems: 'end',
+  },
+  center: {
+    alignItems: 'center',
+  },
+  baseline: {
+    alignItems: 'baseline',
+  },
+  stretch: {
+    alignItems: 'stretch',
+  },
   centered: {
     display: "flex",
     flexDirection: "column",

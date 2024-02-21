@@ -1,3 +1,4 @@
+"use client";
 import { BUTTON_SIZES, BUTTON_STYLES } from "@/styles/button";
 import { LINK_STYLES } from "@/styles/link";
 import { POSITIONING } from "@/styles/positioning";
@@ -9,19 +10,16 @@ import { SHADOWS } from "@/styles/Variables";
 import { INHERIT } from "@/styles/Inherit";
 import { HEADER } from "@/styles/header";
 import { ROUNDING, MARGIN } from "../styles/Variables";
+import { useGlobal } from "Context";
 
-export default function Header({
-  isAuth ,
-}: {
-  isAuth : boolean;
-}) {
+// import { useGlobal } from "@/Context";
+import GoogleButton from 'react-google-button'
+export default function Header({}) {
+  const { isAuth } = useGlobal();
   return (
     <div style={{ height: "100px" }}>
       <header id="nav-wrapper" {...stylex.props(HEADER.navWrapper, SHADOWS.sm)}>
-        <nav
-          id="nav"
-          {...stylex.props(HEADER.nav, POSITIONING.rowResponsive)}
-        >
+        <nav id="nav" {...stylex.props(HEADER.nav, POSITIONING.rowResponsive)}>
           <h1
             className="logo un-skew"
             {...stylex.props(HEADER.h1, ROUNDING.md)}
@@ -51,6 +49,9 @@ export default function Header({
                 </Mylink>
               </Button>
             ))}
+            {!isAuth && <GoogleButton
+  onClick={() => { console.log('Google button clicked') }}
+/>}
           </div>
         </nav>
       </header>
