@@ -6,7 +6,7 @@ import * as stylex from "@stylexjs/stylex";
 import { BUTTON_STYLES } from "@/styles/button";
 import Button from "./Button";
 import Mylink from "./Mylink";
-import { useGlobal } from "Context";
+import { useGlobal } from "../app/context";
 import { useState } from "react";
 import { deleteElementInArray, setElementInArray } from "utils/useState";
 import { TABLE } from "@/styles/table";
@@ -15,9 +15,9 @@ import { TABLE } from "@/styles/table";
 
 
 const Dashboard  = () => {
-  const { surveyData, setSurveyData } = useGlobal();
+  const {isAuth, surveyData, setSurveyData } = useGlobal();
   const [deletingSurveyId, setDeletingSurveyId] = useState<string | null>(null);
-
+  
   // const toggleUploadedStatus = (id: string) => {
   //   const survey = surveyData.find((survey) => {survey.id === id})
   //   setSurveyData(setElementInArray( { ...survey, uploaded: !survey.uploaded }, surveyData))
@@ -30,7 +30,7 @@ const Dashboard  = () => {
 
   return (
     <div className="dashboard" {...stylex.props(POSITIONING.centered)}>
-      <h1>Survey Dashboard</h1>
+      {isAuth? (<><h1>Survey Dashboard</h1>
       <table
         className="survey-table"
         {...stylex.props(TABLE.table, POSITIONING.centeredSelf)}
@@ -113,7 +113,12 @@ const Dashboard  = () => {
         <Button type={BUTTON_STYLES.primary}>
           <Mylink href="/editor">Create New Survey</Mylink>
         </Button>
-      </div>
+      </div></>): (
+         <div  >
+         <h2>Welcome to Survey App!</h2>
+         <p>Please log in to view your surveys.</p>
+       </div>
+      )}
     </div>
   );
 };

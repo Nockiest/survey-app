@@ -14,10 +14,12 @@ module.exports = {
             // Use this value when using `ESModules`.
             type: 'commonJS',
             // The absolute path to the root directory of your project.
-            rootDir: 'string',
+            rootDir:  'string' ,
             // Override `.stylex.js` with your own extension.
           },
          }
       ],
+      ["@babel/plugin-transform-private-methods"]
     ],
+   
   };

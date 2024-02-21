@@ -1,19 +1,18 @@
 "use client";
 import { BUTTON_SIZES, BUTTON_STYLES } from "@/styles/button";
-import { LINK_STYLES } from "@/styles/link";
 import { POSITIONING } from "@/styles/positioning";
 import * as stylex from "@stylexjs/stylex";
-import Link from "next/link";
+ 
 import Button from "./Button";
 import Mylink from "./Mylink";
 import { SHADOWS } from "@/styles/Variables";
 import { INHERIT } from "@/styles/Inherit";
 import { HEADER } from "@/styles/header";
 import { ROUNDING, MARGIN } from "../styles/Variables";
-import { useGlobal } from "Context";
 
-// import { useGlobal } from "@/Context";
-import GoogleButton from 'react-google-button'
+import GoogleButton from "react-google-button";
+import { auth, signInWithGoogle, signOutUser } from "app/firebase";
+import { useGlobal } from "app/context";
 export default function Header({}) {
   const { isAuth } = useGlobal();
   return (
@@ -49,9 +48,21 @@ export default function Header({}) {
                 </Mylink>
               </Button>
             ))}
-            {!isAuth && <GoogleButton
-  onClick={() => { console.log('Google button clicked') }}
-/>}
+            {isAuth ? (
+              <Button
+                onClick={() => {
+                  signOutUser();
+                }}
+              >
+                sign out
+              </Button>
+            ) : (
+              <GoogleButton
+                onClick={() => {
+                  signInWithGoogle();
+                }}
+              />
+            )}
           </div>
         </nav>
       </header>

@@ -2,11 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, getDoc, doc, updateDoc, collection, onSnapshot , query} from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getStorage, ref, uploadBytes } from 'firebase/storage';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ 
 const firebaseConfig = {
   apiKey: "AIzaSyCfL7a64UMQAAgGdifhgpz5qzSMGRQmRac",
   authDomain: "surveyapp-dbb8b.firebaseapp.com",
@@ -19,7 +15,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+ 
 
 const db = getFirestore(app);
 const auth = getAuth(app);
@@ -41,11 +37,13 @@ export const signInWithGoogle = () => {
 
         console.log(name, email, profilePic);
 
-        if (name) localStorage.setItem("name", name);
-        if (email) localStorage.setItem("email", email);
-        if (profilePic) localStorage.setItem("profilePic", profilePic);
+        // if (name) localStorage.setItem("name", name);
+        // if (email) localStorage.setItem("email", email);
+        // if (profilePic) localStorage.setItem("profilePic", profilePic);
 
-        window.location.reload();
+        // window.location.reload();
+        console.log('signed in', user)
+        console.log(auth)
       } else {
         console.log('User data not available');
       }
@@ -70,7 +68,7 @@ export const checkUserAccess = async () => {
   try {
     const user = await getUserAuthentication();
     if (user) {
-      const userEmail = user.email;
+      const userEmail = (user as { email?: string }).email;
       if (userEmail === 'ondralukes06@seznam.cz') {
         console.log('User has access to the Firebase database');
         return true;
@@ -87,11 +85,21 @@ export const checkUserAccess = async () => {
     return false;
   }
 };
-
 auth.onAuthStateChanged((user) => {
   if (user) {
-    console.log('User is signed in:', user);
+    console.log('User is signed in:', user.email, );
   } else {
     console.log('User has signed out');
   }
 });
+
+export const signOutUser = () => {
+  auth.signOut()
+    .then(() => {
+      console.log('User signed out successfully');
+      // Perform any additional actions after sign out if needed
+    })
+    .catch((error) => {
+      console.error('Error signing out:', error);
+    });
+};

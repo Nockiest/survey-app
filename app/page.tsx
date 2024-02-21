@@ -9,33 +9,26 @@ import Button from '@/components/Button';
 import { CARD} from '@/styles/card';
 import Dashboard from '@/components/Dashboard';
 import { mockSurveys } from '../mockData/dashboardData';
-import Table from '@/components/Table';
+// import Table from '@/styl/Table';
 import {HEADER} from '@/styles/header'
 import {SHADOWS,ROUNDING} from '@/styles/Variables'
-import { useGlobal } from '../Context';
+// import { useGlobal } from '../appContext';
+import { auth } from './firebase';
+import RerenderComponent from 'utils/RerenderComponent';
+import { useGlobal } from './context';
 
 
 const HomePage: NextPage = () => {
-  const isAuth = true // useGlobal(); // Replace with your authentication logic
-
+  // const {isAuth} = useGlobal(); // Replace with your authentication logic
+    
   return (
     <>
 
       <Header/>
       <main >
-        {isAuth  ? (
-          <div   >
-
-            <h2>My Surveys</h2>
-
+    
            <Dashboard  />
-          </div>
-        ) : (
-          <div  >
-            <h2>Welcome to Survey App!</h2>
-            <p>Please log in to view your surveys.</p>
-          </div>
-        )}
+         
       </main>
       <button {...stylex.props(BUTTON_STYLES.base, BUTTON_SIZES.lg, BUTTON_STYLES.primary)}>Big</button>
       <button {...stylex.props(BUTTON_STYLES.base,BUTTON_SIZES.md,BUTTON_STYLES.primary)}>Big</button>
@@ -45,6 +38,7 @@ const HomePage: NextPage = () => {
       <button {...stylex.props(BUTTON_STYLES.base,BUTTON_SIZES.sm,BUTTON_STYLES.secondary)}>Big</button>
       <Button    type={BUTTON_STYLES.primary} size={BUTTON_SIZES.lg} />
       <Button    type={BUTTON_STYLES.secondary} size={BUTTON_SIZES.md} />
+      {/* <RerenderComponent triggerValues= {[auth.currentUser,auth.currentUser?.email,auth.currentUser?.displayName]} /> */}
 
       <h1>The quick brown fox jumps over the lazy dog.</h1>
 <h2>Jackdaws love my big sphinx of quartz.</h2>

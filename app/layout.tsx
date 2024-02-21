@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { GlobalContext, GlobalContextProvider, useGlobal } from "../Context";
+import { GlobalContext, GlobalContextProvider, useGlobal } from "./context";
 import "./globals.css";
 import { ReactNode } from "react";
 import Footer from "@/components/Footer";
