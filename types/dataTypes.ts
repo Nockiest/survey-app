@@ -5,7 +5,9 @@ export type Answer = {
 export type Survey = {
     author: string
     views: number
+    uploaded: boolean
     completions: number
+    questions: any[],
     answerStats: Answer[]
     language? : string
     tags? : string

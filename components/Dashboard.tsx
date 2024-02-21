@@ -8,6 +8,7 @@ import Button from "./Button";
 import Mylink from "./Mylink";
 import { useGlobal } from "app/Context";
 import { useState } from "react";
+import { deleteElementInArray } from "utils/useState";
 
 type DashboardProps = {
   // surveys: Survey[];
@@ -41,7 +42,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
   const [deletingSurveyId, setDeletingSurveyId] = useState<string | null>(null);
 
   const handleDelete = (id: string) => {
-    setSurveyData(prevData => prevData.filter(survey => survey.id !== id));
+    setSurveyData(deleteElementInArray(id, surveyData));
     setDeletingSurveyId(null);
   };
 
@@ -52,6 +53,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
         <thead className="survey-header" {...stylex.props(TABLE.head)}>
           <th>Title</th>
           <th>Description</th>
+          <th>Uploaded</th>
           <th>Author</th>
           <th>Views</th>
           <th>Completions</th>
@@ -70,6 +72,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
               <tr key={index} className="survey-row" {...stylex.props(TABLE.row)}>
                 <td {...stylex.props(TABLE.value)}>{survey.title}</td>
                 <td {...stylex.props(TABLE.value)}>{truncatedDescription}</td>
+                <td {...stylex.props(TABLE.value)}>{survey.uploaded? 'yes':'no'}</td>
                 <td {...stylex.props(TABLE.value)}>{survey.author}</td>
                 <td {...stylex.props(TABLE.value)}>{survey.views}</td>
                 <td {...stylex.props(TABLE.value)}>{survey.completions}</td>
